@@ -1,22 +1,23 @@
 <script setup lang="ts">
-  import './assets/styles/main.pcss';
+  /// <reference types="vite-svg-loader" />
 
-  // This starter template is using Vue 3 <script setup> SFCs
-  // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-  import HelloWorld from './components/HelloWorld.vue';
+  import './assets/styles/main.pcss';
+  import TheHeader from './components/TheHeader.vue';
+  import SwappablePanel from './panels/SwappablePanel.vue';
+  import ItemPanel from './panels/ItemPanel/ItemPanel.vue';
 </script>
 
 <template>
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <TheHeader></TheHeader>
+
+  <div class="panels-wrapper">
+    <SwappablePanel></SwappablePanel>
+    <ItemPanel></ItemPanel>
+  </div>
 </template>
 
-<style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+<style lang="postcss">
+  .panels-wrapper {
+    display: flex;
   }
 </style>

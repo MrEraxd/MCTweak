@@ -1,2 +1,34 @@
+@import url('./includes/variables.pcss');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
 body {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100%;
+  margin: 0;
+  background-color: var(--cc-grey--700);
+  color: var(--cc-white);
+  padding: 40px;
+}
+
+button {
+  font-size: var(--button);
+  font-weight: 400;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+  outline: none;
+  background-color: transparent;
+  border: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
