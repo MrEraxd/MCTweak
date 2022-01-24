@@ -19,5 +19,7 @@
 <style lang="postcss">
   .panels-wrapper {
     display: flex;
+    flex: 1;
+    flex-shrink: 0;
   }
 </style>

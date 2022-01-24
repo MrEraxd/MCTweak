@@ -2,13 +2,21 @@
   import SwappablePanelSwitch from './SwappablePanelSwitch.vue';
   import CraftingPanel from './CraftingPanel/CraftingPanel.vue';
   import SavedRecipesPanel from './SavedRecipesPanel/SavedRecipesPanel.vue';
+  import { ref } from 'vue';
 
-  let activePanel = 'SavedRecipesPanel';
+  let activePanel = ref('CraftingPanel');
+
+  function toggleActivePanel(newPanelName: string) {
+    activePanel.value = newPanelName;
+  }
 </script>
 
 <template>
   <div class="swappable-panel">
-    <SwappablePanelSwitch :active-panel="activePanel"></SwappablePanelSwitch>
+    <SwappablePanelSwitch
+      :active-panel="activePanel"
+      @toggle-active-panel="toggleActivePanel"
+    ></SwappablePanelSwitch>
 
     <CraftingPanel v-show="activePanel === 'CraftingPanel'"></CraftingPanel>
 
@@ -21,5 +29,6 @@
 <style lang="postcss">
   .swappable-panel {
     display: flex;
+    column-gap: 28px;
   }
 </style>

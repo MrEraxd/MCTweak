@@ -16,6 +16,8 @@ export default defineConfig({
     },
   },
   resolve: {
-    alias: [{ find: '@svg', replacement: path.resolve(path.dirname(''), 'src/assets/svg') }],
+    alias: [
+      { find: '@svg', replacement: path.resolve(path.dirname(''), 'src/assets/svg') },
+    ],
   },
 });

@@ -12,11 +12,19 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
   margin: 0;
   background-color: var(--cc-grey--700);
   color: var(--cc-white);
   padding: 40px;
+}
+
+#app {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
 }
 
 button {

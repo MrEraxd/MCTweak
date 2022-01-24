@@ -1,14 +1,39 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const emit = defineEmits<{
+    // eslint-disable-next-line no-unused-vars
+    (e: 'toggleActivePanel', newPanelName: string): void;
+  }>();
+
+  const props = withDefaults(defineProps<{ activePanel: string }>(), {
+    activePanel: 'CraftingPanel',
+  });
+
+  function togglePanel(newPanelName: string) {
+    emit('toggleActivePanel', newPanelName);
+  }
+</script>
 
 <template>
   <div class="the-active-panel-switch">
     <button
-      class="the-active-panel-switch__button the-active-panel-switch__button--active"
+      class="the-active-panel-switch__button"
+      :class="{
+        'the-active-panel-switch__button--active':
+          props.activePanel === 'CraftingPanel',
+      }"
+      @click="togglePanel('CraftingPanel')"
     >
       <span>Crafting</span>
     </button>
 
-    <button class="the-active-panel-switch__button">
+    <button
+      class="the-active-panel-switch__button"
+      :class="{
+        'the-active-panel-switch__button--active':
+          props.activePanel === 'SavedRecipesPanel',
+      }"
+      @click="togglePanel('SavedRecipesPanel')"
+    >
       <span>Saved Recipes</span>
     </button>
   </div>
@@ -29,6 +54,7 @@
       border-color: var(--cc-grey--300);
       padding-top: 24px;
       padding-right: 4px;
+      transition: border-color 0.2s;
 
       &--active {
         border-color: var(--cc-blue--500);
