@@ -51,13 +51,13 @@
       display: flex;
       justify-content: flex-start;
       border-right: 2px solid;
-      border-color: var(--cc-grey--300);
+      border-color: hsl(var(--color-cc-grey-30));
       padding-top: 24px;
       padding-right: 4px;
       transition: border-color 0.2s;
 
       &--active {
-        border-color: var(--cc-blue--500);
+        border-color: hsl(var(--color-cc-blue-50));
       }
 
       span {

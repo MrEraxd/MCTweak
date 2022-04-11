@@ -36,7 +36,7 @@
 
       &:hover {
         svg path {
-          fill: var(--cc-blue--300);
+          fill: hsl(var(--color-cc-blue-30));
         }
       }
     }
