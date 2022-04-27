@@ -18,7 +18,9 @@
     color: hsl(var(--color-cc-white));
     background-color: hsl(var(--color-cc-blue-50));
     border-radius: 4px;
-    font-size: var(--button);
+    font-size: 14px;
+    line-height: 19px;
+    font-family: 'Open Sans';
     letter-spacing: 1.25px;
     font-weight: 500;
     transition: background-color 0.2s;
