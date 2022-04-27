@@ -24,6 +24,8 @@
     },
     "extends": [
       "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
       "plugin:vue/vue3-recommended",
       "prettier"
     ],
@@ -51,6 +53,7 @@
     "eslint-plugin-vue": "^8.3.0",
     "postcss-nested": "^5.0.6",
     "prettier": "2.5.1",
+    "slim-select": "^1.27.1",
     "typescript": "^4.4.4",
     "vite": "^2.7.2",
     "vite-plugin-eslint": "^1.3.0",
