@@ -7,7 +7,7 @@ import path from 'path/posix';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), eslintPlugin(), svgLoader()],
+  plugins: [vue(), eslintPlugin({ cache: false }), svgLoader()],
   base: './',
   server: {
     https: {
@@ -17,7 +17,10 @@ export default defineConfig({
   },
   resolve: {
     alias: [
-      { find: '@svg', replacement: path.resolve(path.dirname(''), 'src/assets/svg') },
+      {
+        find: '@svg',
+        replacement: path.resolve(path.dirname(''), 'src/assets/svg'),
+      },
     ],
   },
 });
