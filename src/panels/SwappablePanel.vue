@@ -18,11 +18,17 @@
       @toggle-active-panel="toggleActivePanel"
     ></SwappablePanelSwitch>
 
-    <CraftingPanel v-show="activePanel === 'CraftingPanel'"></CraftingPanel>
+    <div class="swappable-panel__panels-wrapper">
+      <Transition>
+        <CraftingPanel v-show="activePanel === 'CraftingPanel'"></CraftingPanel>
+      </Transition>
 
-    <SavedRecipesPanel
-      v-show="activePanel === 'SavedRecipesPanel'"
-    ></SavedRecipesPanel>
+      <Transition name="">
+        <SavedRecipesPanel
+          v-show="activePanel === 'SavedRecipesPanel'"
+        ></SavedRecipesPanel>
+      </Transition>
+    </div>
   </div>
 </template>
 
@@ -30,5 +36,25 @@
   .swappable-panel {
     display: flex;
     column-gap: 28px;
+  }
+
+  .v-enter-active,
+  .v-leave-active {
+    transition: opacity 0.35s;
+  }
+
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swappable-panel__panels-wrapper {
+    position: relative;
+    width: 812px;
   }
 </style>
