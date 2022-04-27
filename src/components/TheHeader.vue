@@ -4,7 +4,7 @@
 
 <template>
   <nav class="main-nav">
-    <div class="main-nav__logo">MCTweak</div>
+    <div class="main-nav__logo headline headline--4">MCTweak</div>
 
     <a
       href="https://github.com/MrEraxd/MCTweak"
@@ -22,10 +22,6 @@
     display: flex;
     align-items: center;
     margin-bottom: 32px;
-
-    &__logo {
-      font-size: var(--headline-4);
-    }
 
     &__github {
       margin-left: auto;
