@@ -4,6 +4,7 @@
 
   /**
    * Props for base dropdown
+   * @param {string} dropdownLabel - Label for dropdown
    * @param {Array<string>} options - Array of options to choose from
    * @param {(newValue): boolean} void - Callback function to execute after option change
    */
@@ -23,6 +24,7 @@
   });
 
   const el = ref();
+  const label = ref();
 
   /**
    * Creates name for select based on label
@@ -41,13 +43,19 @@
       onChange: (info: any) => {
         props.callback(info.value);
       },
+      beforeOpen: () => {
+        label.value.classList.add('base-dropdown__label--active');
+      },
+      beforeClose: () => {
+        label.value.classList.remove('base-dropdown__label--active');
+      },
     });
   });
 </script>
 
 <template>
   <div class="base-dropdown">
-    <label :for="selectName" class="base-dropdown__label caption">{{
+    <label ref="label" :for="selectName" class="base-dropdown__label caption">{{
       props.dropdownLabel
     }}</label>
     <select id="select" ref="el" :name="selectName">
@@ -55,7 +63,7 @@
         v-for="option in props.options"
         :key="option"
         :value="option"
-        class="subtitle subtitle--2"
+        class="body-txt body-txt--2"
       >
         {{ option }}
       </option>
@@ -65,6 +73,8 @@
 
 <style lang="postcss">
   .base-dropdown {
+    position: relative;
+
     &__label {
       position: absolute;
       left: 10px;
@@ -77,6 +87,11 @@
       border-radius: 4px;
       color: hsl(var(--color-cc-grey-40));
       pointer-events: none;
+      transition: color 0.2s;
+
+      &--active {
+        color: hsl(var(--color-cc-blue-50));
+      }
     }
 
     .ss-main {
@@ -86,28 +101,28 @@
       font-size: var(--button);
 
       .ss-single-selected {
-        background-color: hsl(var(--color-cc-grey-70));
-        border: 2px solid hsl(var(--color-cc-grey-40));
+        background-color: hsl(var(--color-cc-black));
+        border: 1px solid hsl(var(--color-cc-grey-40));
         height: 100%;
-        padding: 14px 12px;
+        padding: 10px 12px;
         column-gap: 12px;
         color: hsl(var(--color-cc-white));
         transition: border-bottom-left-radius 0.15s 0.05s,
-          border-bottom-right-radius 0.15s 0.05s;
+          border-bottom-right-radius 0.15s 0.05s, border-color 0.15s;
 
         &.ss-open-below {
           transition: border-bottom-left-radius 0s,
             border-bottom-right-radius 0s;
+          border-color: hsl(var(--color-cc-blue-50));
         }
 
         .placeholder {
           width: calc(100%);
           display: block;
-          font-family: var(--secondary-font);
-          font-weight: 500;
+          font-family: var(--main-font);
           font-size: 14px;
-          line-height: 16px;
-          letter-spacing: 0.1px;
+          line-height: 19px;
+          letter-spacing: 0.25px;
         }
       }
 
@@ -116,7 +131,7 @@
         border: none;
 
         .ss-list {
-          border: 2px solid hsl(var(--color-cc-grey-40));
+          border: 1px solid hsl(var(--color-cc-blue-50));
           border-top: none;
 
           &::-webkit-scrollbar {
@@ -133,12 +148,13 @@
           }
 
           .ss-option {
-            background-color: hsl(var(--color-cc-grey-70));
-            padding: 12px;
+            background-color: hsl(var(--color-cc-black));
+            padding: 10px 12px;
             transition: background-color 0.2s, color 0.2s;
 
-            &:hover {
-              background-color: hsl(var(--color-cc-grey-60));
+            &:hover,
+            &.ss-highlighted {
+              background-color: hsl(var(--color-cc-grey-70));
             }
           }
         }
