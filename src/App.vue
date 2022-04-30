@@ -10,10 +10,10 @@
 <template>
   <TheHeader></TheHeader>
 
-  <div class="panels-wrapper">
+  <main class="panels-wrapper">
     <SwappablePanel></SwappablePanel>
     <ItemPanel></ItemPanel>
-  </div>
+  </main>
 </template>
 
 <style lang="postcss">
@@ -21,5 +21,7 @@
     display: flex;
     flex: 1;
     flex-shrink: 0;
+    overflow: auto;
+    padding-top: 12px;
   }
 </style>
