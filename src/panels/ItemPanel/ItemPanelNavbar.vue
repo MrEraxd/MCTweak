@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import BaseDropdown from '../../components/Base/BaseDropdown.vue';
-  import BaseButton from '../../components/Base/BaseButton.vue';
-  import BaseInput from '../../components/Base/BaseInput.vue';
+  import BaseDropdown from '@Base/BaseDropdown.vue';
+  import BaseButton from '@Base/BaseButton.vue';
+  import BaseInput from '@Base/BaseInput.vue';
 
   const options = ['a', 'b'];
 </script>

@@ -21,6 +21,10 @@ export default defineConfig({
         find: '@svg',
         replacement: path.resolve(path.dirname(''), 'src/assets/svg'),
       },
+      {
+        find: '@Base',
+        replacement: path.resolve(path.dirname(''), 'src/components/Base'),
+      },
     ],
   },
 });
