@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <nav class="main-nav">
+  <header class="main-nav">
     <div class="main-nav__logo headline headline--4">MCTweak</div>
 
     <a
@@ -13,7 +13,7 @@
     >
       <GithubIcon />
     </a>
-  </nav>
+  </header>
 </template>
 
 <style lang="postcss">
