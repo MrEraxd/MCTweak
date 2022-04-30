@@ -14,7 +14,7 @@
 
 <style lang="postcss">
   .base-button {
-    padding: 12px 28px;
+    padding: 10px 28px;
     color: hsl(var(--color-cc-white));
     background-color: hsl(var(--color-cc-blue-50));
     border-radius: 4px;
@@ -24,6 +24,9 @@
     letter-spacing: 1.25px;
     font-weight: 500;
     transition: background-color 0.2s;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
 
     &:hover {
       cursor: pointer;
