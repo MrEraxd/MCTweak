@@ -12,7 +12,8 @@
     "lib": ["esnext", "dom"],
     "baseUrl": "./src",
     "paths": {
-      "@svg": ["assets/svg"]
+      "@svg": ["assets/svg"],
+      "@Base": ["components/Base"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
