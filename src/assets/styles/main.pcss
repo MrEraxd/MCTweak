@@ -20,7 +20,7 @@ body {
   margin: 0;
   background-color: hsl(var(--color-cc-grey-70));
   color: hsl(var(--color-cc-white));
-  padding: 40px;
+  padding: 24px;
 }
 
 #app {
@@ -29,16 +29,22 @@ body {
   width: 100%;
 }
 
-button {
-  font-size: var(--button);
-  font-weight: 400;
-  font-family: 'Open Sans';
-  text-transform: uppercase;
-  outline: none;
-  background-color: transparent;
-  border: 0;
+::-webkit-scrollbar {
+  width: 3px;
+}
 
-  &:hover {
-    cursor: pointer;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: hsl(var(--color-cc-grey-60));
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--color-cc-grey-40));
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--color-cc-grey-30));
+  cursor: pointer;
 }
