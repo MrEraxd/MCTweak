@@ -23,6 +23,6 @@
 <style lang="postcss">
   .crafting-panel-navbar {
     display: flex;
-    column-gap: 32px;
+    column-gap: 24px;
   }
 </style>
