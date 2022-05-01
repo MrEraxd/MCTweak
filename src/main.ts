@@ -1,5 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import App from './App.vue';
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import { DefaultApolloClient } from '@vue/apollo-composable';
+import apolloClient from './apollo';
 
-const app = createApp(App);
-app.mount("#app");
+createApp(App)
+  .provide(DefaultApolloClient, apolloClient)
+  .use(createPinia())
+  .mount('#app');

@@ -1,0 +1,11 @@
+query allItemsQuery {
+  items {
+    id
+    type
+    modId
+    name
+    displayName
+    tag
+    versions
+  }
+}

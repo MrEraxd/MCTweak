@@ -4,10 +4,11 @@ import eslintPlugin from 'vite-plugin-eslint';
 import svgLoader from 'vite-svg-loader';
 import fs from 'fs';
 import path from 'path/posix';
+import graphql from '@rollup/plugin-graphql';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), eslintPlugin({ cache: false }), svgLoader()],
+  plugins: [vue(), eslintPlugin({ cache: false }), svgLoader(), graphql()],
   base: './',
   server: {
     https: {

@@ -3,8 +3,8 @@
 
   import './assets/styles/main.pcss';
   import TheHeader from './components/TheHeader.vue';
-  import SwappablePanel from './panels/SwappablePanel.vue';
-  import ItemPanel from './panels/ItemPanel/ItemPanel.vue';
+  import SwappablePanel from './components/panels/SwappablePanel.vue';
+  import ItemPanel from './components/panels/ItemPanel/ItemPanel.vue';
 </script>
 
 <template>
