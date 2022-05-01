@@ -2,11 +2,15 @@
   interface IBaseInput {
     inputLabel: string;
     placeholder?: string;
+    callback: (inputValue: string) => void;
   }
 
   const props = withDefaults(defineProps<IBaseInput>(), {
     inputLabel: 'No label',
     placeholder: 'Type here...',
+    callback: () => {
+      return;
+    },
   });
 
   const selectName = props.inputLabel.toLocaleLowerCase().replace(/\s/g, '');
@@ -15,9 +19,11 @@
 <template>
   <div class="base-input">
     <input
+      ref="inputElem"
       class="base-input__input body-txt body-txt--2"
       :name="selectName"
       :placeholder="props.placeholder"
+      @input="(e) => props.callback((e.target as HTMLInputElement).value.toString())"
     />
 
     <label :for="selectName" class="base-input__label caption">{{
