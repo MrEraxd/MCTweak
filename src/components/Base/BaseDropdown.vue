@@ -24,7 +24,7 @@
   });
 
   const el = ref();
-  const label = ref();
+  const labelElem = ref();
 
   /**
    * Creates name for select based on label
@@ -44,10 +44,10 @@
         props.callback(info.value);
       },
       beforeOpen: () => {
-        label.value.classList.add('base-dropdown__label--active');
+        labelElem.value.classList.add('base-dropdown__label--active');
       },
       beforeClose: () => {
-        label.value.classList.remove('base-dropdown__label--active');
+        labelElem.value.classList.remove('base-dropdown__label--active');
       },
     });
   });
@@ -55,9 +55,13 @@
 
 <template>
   <div class="base-dropdown">
-    <label ref="label" :for="selectName" class="base-dropdown__label caption">{{
-      props.dropdownLabel
-    }}</label>
+    <label
+      ref="labelElem"
+      :for="selectName"
+      class="base-dropdown__label caption"
+      >{{ props.dropdownLabel }}</label
+    >
+
     <select id="select" ref="el" :name="selectName">
       <option
         v-for="option in props.options"
