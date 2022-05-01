@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import BaseDropdown from '../../components/Base/BaseDropdown.vue';
-  import BaseButton from '../../components/Base/BaseButton.vue';
+  import BaseDropdown from '../../Base/BaseDropdown.vue';
+  import BaseButton from '../../Base/BaseButton.vue';
 
   const craftingOptions = ['a', 'b', 'c', 'd', 'f'];
   const callback = (newValue: string) => {

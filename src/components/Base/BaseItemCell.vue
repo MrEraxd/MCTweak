@@ -1,8 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  interface IBaseItemCell {
+    displayName?: string;
+  }
+
+  const props = withDefaults(defineProps<IBaseItemCell>(), {
+    displayName: '',
+  });
+</script>
 
 <template>
   <div class="base-item-cell">
-    <div class="base-item-cell__content"></div>
+    <div class="base-item-cell__content">{{ props.displayName }}</div>
   </div>
 </template>
 

@@ -1,13 +1,15 @@
 <script setup lang="ts">
   interface IBaseInput {
     inputLabel: string;
-    placeholder?: string;
     callback: (inputValue: string) => void;
+    placeholder?: string;
+    defaultValue?: string;
   }
 
   const props = withDefaults(defineProps<IBaseInput>(), {
     inputLabel: 'No label',
     placeholder: 'Type here...',
+    defaultValue: '',
     callback: () => {
       return;
     },
@@ -23,6 +25,7 @@
       class="base-input__input body-txt body-txt--2"
       :name="selectName"
       :placeholder="props.placeholder"
+      :value="props.defaultValue"
       @input="(e) => props.callback((e.target as HTMLInputElement).value.toString())"
     />
 

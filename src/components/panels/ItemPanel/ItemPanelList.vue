@@ -1,13 +1,20 @@
 <script setup lang="ts">
-  import BaseItemCell from '../../components/Base/BaseItemCell.vue';
+  import BaseItemCell from '../../Base/BaseItemCell.vue';
+  import { useItemPanelStore } from '../../../stores/ItemPanelStore';
+
+  const itemPanelStore = useItemPanelStore();
+
+  itemPanelStore.getItems();
 </script>
 
 <template>
   <div class="item-panel-list">
     <div class="item-panel-list__list">
       <BaseItemCell
-        v-for="item in [...Array(600).keys()]"
-        :key="item"
+        v-for="item in itemPanelStore.loadedItems"
+        v-show="true"
+        :key="item.id"
+        :display-name="item.displayName"
       ></BaseItemCell>
     </div>
   </div>
