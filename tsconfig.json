@@ -12,8 +12,11 @@
     "lib": ["esnext", "dom"],
     "baseUrl": "./src",
     "paths": {
-      "@svg": ["assets/svg"],
-      "@Base": ["components/Base"]
+      "@svg/*": ["assets/svg/*"],
+      "@base/*": ["components/Base/*"],
+      "@store/*": ["stores/*"],
+      "@graphql/*": ["graphql/*"],
+      "@plugins/*": ["plugins/*"]
     }
   },
   "include": [

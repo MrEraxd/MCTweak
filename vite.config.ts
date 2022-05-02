@@ -23,8 +23,20 @@ export default defineConfig({
         replacement: path.resolve(path.dirname(''), 'src/assets/svg'),
       },
       {
-        find: '@Base',
+        find: '@base',
         replacement: path.resolve(path.dirname(''), 'src/components/Base'),
+      },
+      {
+        find: '@store',
+        replacement: path.resolve(path.dirname(''), 'src/stores'),
+      },
+      {
+        find: '@graphql',
+        replacement: path.resolve(path.dirname(''), 'src/graphql'),
+      },
+      {
+        find: '@plugins',
+        replacement: path.resolve(path.dirname(''), 'src/plugins'),
       },
     ],
   },

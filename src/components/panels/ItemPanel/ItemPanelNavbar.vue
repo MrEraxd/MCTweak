@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import BaseDropdown from '../../Base/BaseDropdown.vue';
-  import BaseButton from '../../Base/BaseButton.vue';
-  import BaseInput from '../../Base/BaseInput.vue';
+  import BaseDropdown from '@base/BaseDropdown.vue';
+  import BaseButton from '@base/BaseButton.vue';
+  import BaseInput from '@base/BaseInput.vue';
   import { useItemPanelStore } from '../../../stores/ItemPanelStore';
 
   const itemPanelStore = useItemPanelStore();

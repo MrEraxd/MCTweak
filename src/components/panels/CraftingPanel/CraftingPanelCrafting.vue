@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import BaseItemCell from '../../Base/BaseItemCell.vue';
+  import BaseItemCell from '@base/BaseItemCell.vue';
 </script>
 
 <template>
