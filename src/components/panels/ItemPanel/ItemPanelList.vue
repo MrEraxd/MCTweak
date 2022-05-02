@@ -1,10 +1,8 @@
 <script setup lang="ts">
   import BaseItemCell from '@base/BaseItemCell.vue';
-  import { useItemPanelStore } from '@store/ItemPanelStore';
+  import { useItemPanelStore } from '../../../stores/ItemPanelStore';
 
   const itemPanelStore = useItemPanelStore();
-
-  itemPanelStore.getItemsByModId();
 </script>
 
 <template>
@@ -12,7 +10,11 @@
     <div class="item-panel-list__list">
       <BaseItemCell
         v-for="item in itemPanelStore.loadedItems"
-        v-show="!item.displayName.search(itemPanelStore.searchString)"
+        v-show="
+          item.displayName
+            .toLocaleLowerCase()
+            .search(itemPanelStore.searchString.toLocaleLowerCase()) != -1
+        "
         :key="item.id"
         :display-name="item.displayName"
       ></BaseItemCell>
