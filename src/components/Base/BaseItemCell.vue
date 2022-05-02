@@ -25,6 +25,8 @@
     justify-content: center;
     align-items: center;
     padding: 4px;
+    font-size: 10px;
+    text-align: center;
 
     &:hover {
       outline-color: hsl(var(--color-cc-blue-50)) !important;
