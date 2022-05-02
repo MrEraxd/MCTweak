@@ -5,7 +5,9 @@
 
 <template>
   <div class="item-panel">
-    <ItemPanelNavbar></ItemPanelNavbar>
+    <Suspense>
+      <ItemPanelNavbar></ItemPanelNavbar>
+    </Suspense>
 
     <ItemPanelList></ItemPanelList>
   </div>

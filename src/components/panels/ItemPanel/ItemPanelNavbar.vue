@@ -6,20 +6,26 @@
 
   const itemPanelStore = useItemPanelStore();
 
-  const options = ['a', 'b'];
+  const options = await itemPanelStore.getAvailableModIds();
 
   const updateSearchValueFromInput = (newValue: string) => {
     itemPanelStore.searchString = newValue;
+  };
+
+  const changeLoadedItems = (modId: string) => {
+    itemPanelStore.loadItemsByModId(modId);
   };
 </script>
 
 <template>
   <div class="item-panel-navbar">
-    <BaseDropdown
-      dropdown-label="MOD"
-      :options="options"
-      :callback="() => {}"
-    ></BaseDropdown>
+    <Suspense>
+      <BaseDropdown
+        dropdown-label="MOD"
+        :options="options"
+        :callback="changeLoadedItems"
+      ></BaseDropdown>
+    </Suspense>
 
     <BaseInput
       input-label="Filter"
