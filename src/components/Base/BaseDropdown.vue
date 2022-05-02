@@ -127,6 +127,7 @@
           font-size: 14px;
           line-height: 19px;
           letter-spacing: 0.25px;
+          text-transform: capitalize;
         }
       }
 
@@ -155,6 +156,7 @@
             background-color: hsl(var(--color-cc-black));
             padding: 10px 12px;
             transition: background-color 0.2s, color 0.2s;
+            text-transform: capitalize;
 
             &:hover,
             &.ss-highlighted {
