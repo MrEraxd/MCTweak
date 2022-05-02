@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import apolloClient from '../apollo';
+import { getData } from '@plugins/dbConnection';
 import allItemsQuery from '../graphql/allItems.query.gql';
 
 interface IItem {
@@ -15,14 +15,8 @@ export const useItemPanelStore = defineStore('ItemPanelStore', {
     };
   },
   actions: {
-    getItems() {
-      apolloClient
-        .query({
-          query: allItemsQuery,
-        })
-        .then((data) => {
-          this.loadedItems = data.data.items;
-        });
+    getItemsByModId() {
+      getData(allItemsQuery).then((res) => (this.loadedItems = res.data.items));
     },
   },
 });
