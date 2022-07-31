@@ -1,7 +1,7 @@
 import { DocumentNode } from 'graphql';
 
 export function queryData(query: DocumentNode, variables?: any) {
-  return fetch('http://localhost:4000', {
+  return fetch(import.meta.env.VITE_MCTWEAK_DB_ADDRESS, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
