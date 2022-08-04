@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import BaseItemCell from '@base/BaseItemCell.vue';
-  import { useItemPanelStore } from '../../../stores/ItemPanelStore';
+  import { useItemPanelStore } from '@stores/ItemPanelStore';
 
   const itemPanelStore = useItemPanelStore();
 </script>

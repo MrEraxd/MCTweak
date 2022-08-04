@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import eslintPlugin from 'vite-plugin-eslint';
 import svgLoader from 'vite-svg-loader';
 import fs from 'fs';
-import path from 'path/posix';
+import path from 'path';
 import graphql from '@rollup/plugin-graphql';
 
 // https://vitejs.dev/config/
@@ -11,9 +11,12 @@ export default defineConfig({
   plugins: [vue(), eslintPlugin({ cache: false }), svgLoader(), graphql()],
   base: './',
   server: {
+    host: 'localhost',
     https: {
       key: fs.readFileSync('./.cert/localhost-key.pem'),
       cert: fs.readFileSync('./.cert/localhost.pem'),
+      //key: fs.readFileSync('/etc/letsencrypt/live/cobaltcastle.cc/privkey.pem'),
+      //cert: fs.readFileSync('/etc/letsencrypt/live/cobaltcastle.cc/fullchain.pem')
     },
   },
   resolve: {
@@ -27,7 +30,7 @@ export default defineConfig({
         replacement: path.resolve(path.dirname(''), 'src/components/Base'),
       },
       {
-        find: '@store',
+        find: '@stores',
         replacement: path.resolve(path.dirname(''), 'src/stores'),
       },
       {
@@ -37,6 +40,10 @@ export default defineConfig({
       {
         find: '@plugins',
         replacement: path.resolve(path.dirname(''), 'src/plugins'),
+      },
+      {
+        find: '@stores',
+        replacement: path.resolve(path.dirname(''), 'src/stores'),
       },
     ],
   },

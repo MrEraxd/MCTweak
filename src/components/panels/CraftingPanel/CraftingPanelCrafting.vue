@@ -1,13 +1,13 @@
 <script setup lang="ts">
-  import BaseItemCell from '@base/BaseItemCell.vue';
+  import BaseCraftingCell from '@base/BaseCraftingCell.vue';
 </script>
 
 <template>
   <div class="crafting-panel-crafting">
-    <BaseItemCell
+    <BaseCraftingCell
       v-for="item in [...Array(9).keys()]"
       :key="item"
-    ></BaseItemCell>
+    ></BaseCraftingCell>
   </div>
 </template>
 

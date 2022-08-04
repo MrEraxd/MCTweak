@@ -18,7 +18,7 @@ export const useItemPanelStore = defineStore('ItemPanelStore', {
   },
   actions: {
     loadItemsByModId(modId: string) {
-      queryData(itemsByModIdQuery, { modId: modId }).then(
+      return queryData(itemsByModIdQuery, { modId: modId }).then(
         (res) => (this.loadedItems = res.data.itemsByModId)
       );
     },

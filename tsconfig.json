@@ -14,7 +14,7 @@
     "paths": {
       "@svg/*": ["assets/svg/*"],
       "@base/*": ["components/Base/*"],
-      "@store/*": ["stores/*"],
+      "@stores/*": ["stores/*"],
       "@graphql/*": ["graphql/*"],
       "@plugins/*": ["plugins/*"]
     }

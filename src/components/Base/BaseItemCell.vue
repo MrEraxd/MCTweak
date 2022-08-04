@@ -1,15 +1,29 @@
 <script setup lang="ts">
   interface IBaseItemCell {
-    displayName?: string;
+    displayName: string;
   }
 
   const props = withDefaults(defineProps<IBaseItemCell>(), {
     displayName: '',
   });
+
+  const startDrag = (e: DragEvent, cell: IBaseItemCell) => {
+    if (e.dataTransfer === null) return;
+
+    e.dataTransfer.dropEffect = 'copy';
+    e.dataTransfer.effectAllowed = 'copy';
+    e.dataTransfer.setData('cell', JSON.stringify(cell));
+  };
 </script>
 
 <template>
-  <div class="base-item-cell">
+  <div
+    class="base-item-cell"
+    draggable="true"
+    @dragstart="startDrag($event, props)"
+    @dragenter.prevent
+    @dragover.prevent
+  >
     <div class="base-item-cell__content">{{ props.displayName }}</div>
   </div>
 </template>
