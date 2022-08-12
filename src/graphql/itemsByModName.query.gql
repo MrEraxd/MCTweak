@@ -1,0 +1,5 @@
+query itemsByModName($modName: String) {
+  itemsByModName(modName: $modName) {
+    displayName
+  }
+}

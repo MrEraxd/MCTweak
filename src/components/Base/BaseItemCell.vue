@@ -1,7 +1,5 @@
 <script setup lang="ts">
-  interface IBaseItemCell {
-    displayName: string;
-  }
+  import { IBaseItemCell } from '@types';
 
   const props = withDefaults(defineProps<IBaseItemCell>(), {
     displayName: '',

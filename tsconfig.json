@@ -16,7 +16,8 @@
       "@base/*": ["components/Base/*"],
       "@stores/*": ["stores/*"],
       "@graphql/*": ["graphql/*"],
-      "@plugins/*": ["plugins/*"]
+      "@plugins/*": ["plugins/*"],
+      "@types": ["types.ts"]
     }
   },
   "include": [

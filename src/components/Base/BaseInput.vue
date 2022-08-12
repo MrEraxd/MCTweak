@@ -1,12 +1,7 @@
 <script setup lang="ts">
-  interface IBaseInput {
-    inputLabel: string;
-    callback: (inputValue: string) => void;
-    placeholder?: string;
-    defaultValue?: string;
-  }
+  import { IBaseInputProps } from '@types';
 
-  const props = withDefaults(defineProps<IBaseInput>(), {
+  const props = withDefaults(defineProps<IBaseInputProps>(), {
     inputLabel: 'No label',
     placeholder: 'Type here...',
     defaultValue: '',

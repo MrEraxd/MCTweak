@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { queryData } from '@plugins/dbConnection';
-import itemsByModIdQuery from '../graphql/itemsByModId.query.gql';
-import availableItemsListQuery from '../graphql/availableItemsList.query.gql';
+import itemsByModNameQuery from '@graphql/itemsByModName.query.gql';
+import availableItemsListQuery from '@graphql/availableItemsList.query.gql';
 
 interface IItem {
   id: string;
@@ -13,18 +13,18 @@ export const useItemPanelStore = defineStore('ItemPanelStore', {
     return {
       searchString: '',
       loadedItems: <IItem[]>[],
-      availableModIds: [],
+      availableItemLists: [],
     };
   },
   actions: {
-    loadItemsByModId(modId: string) {
-      return queryData(itemsByModIdQuery, { modId: modId }).then(
-        (res) => (this.loadedItems = res.data.itemsByModId)
+    loadItemsByModName(modName: string) {
+      return queryData(itemsByModNameQuery, { modName: modName }).then(
+        (res) => (this.loadedItems = res.data.itemsByModName)
       );
     },
-    async getAvailableModIds() {
+    async getAvailableItemLists() {
       return queryData(availableItemsListQuery).then(
-        (res) => (this.availableModIds = res.data.availableItemsList)
+        (res) => (this.availableItemLists = res.data.availableItemLists)
       );
     },
   },

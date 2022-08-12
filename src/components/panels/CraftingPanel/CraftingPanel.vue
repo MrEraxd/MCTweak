@@ -1,13 +1,15 @@
 <script setup lang="ts">
   import CraftingPanelNavbar from './CraftingPanelNavbar.vue';
-  import CraftingPanelCrafting from './CraftingPanelCrafting.vue';
+  import CraftingPanelCanvas from './CraftingPanelCanvas.vue';
 </script>
 
 <template>
   <div class="crafting-panel">
-    <CraftingPanelNavbar></CraftingPanelNavbar>
+    <Suspense>
+      <CraftingPanelNavbar></CraftingPanelNavbar>
+    </Suspense>
 
-    <CraftingPanelCrafting></CraftingPanelCrafting>
+    <CraftingPanelCanvas></CraftingPanelCanvas>
   </div>
 </template>
 

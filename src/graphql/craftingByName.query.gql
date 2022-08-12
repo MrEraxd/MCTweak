@@ -1,0 +1,26 @@
+query CraftingByName($name: String) {
+  craftingByName(name: $name) {
+    name
+    displayName
+    prefix
+    canvas {
+      slots {
+        type
+        displayName
+        syntaxName
+        addinationalInputs {
+          type
+        }
+        style {
+          width
+          height
+          top
+          left
+        }
+      }
+      style {
+        backgroundColor
+      }
+    }
+  }
+}

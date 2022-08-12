@@ -1,0 +1,6 @@
+query availableCraftings {
+  availableCraftings {
+    name
+    displayName
+  }
+}

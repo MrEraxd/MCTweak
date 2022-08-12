@@ -1,22 +1,16 @@
 <script setup lang="ts">
   import { onMounted, ref } from 'vue';
   import SlimSelect from 'slim-select';
+  import { IBaseDropdownProps } from '@types';
 
-  /**
-   * Props for base dropdown
-   * @param {string} dropdownLabel - Label for dropdown
-   * @param {Array<string>} options - Array of options to choose from
-   * @param {(newValue): boolean} void - Callback function to execute after option change
-   */
-  interface IBaseDropDownProps {
-    dropdownLabel: string;
-    options: Array<string>;
-    callback: (newValue: string) => void;
-  }
-
-  const props = withDefaults(defineProps<IBaseDropDownProps>(), {
+  const props = withDefaults(defineProps<IBaseDropdownProps>(), {
     dropdownLabel: 'No label',
-    options: () => ['No options provided'],
+    options: () => [
+      {
+        value: '',
+        label: 'No options provided',
+      },
+    ],
     callback: () => {
       console.error('No callback function provided');
       return false;
@@ -65,11 +59,11 @@
     <select id="select" ref="el" :name="selectName">
       <option
         v-for="option in props.options"
-        :key="option"
-        :value="option"
+        :key="option.value"
+        :value="option.value"
         class="body-txt body-txt--2"
       >
-        {{ option }}
+        {{ option.label }}
       </option>
     </select>
   </div>

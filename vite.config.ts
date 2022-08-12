@@ -5,10 +5,17 @@ import svgLoader from 'vite-svg-loader';
 import fs from 'fs';
 import path from 'path';
 import graphql from '@rollup/plugin-graphql';
+import VueTypeImports from 'vite-plugin-vue-type-imports';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), eslintPlugin({ cache: false }), svgLoader(), graphql()],
+  plugins: [
+    vue(),
+    eslintPlugin({ cache: false }),
+    svgLoader(),
+    graphql(),
+    VueTypeImports(),
+  ],
   base: './',
   server: {
     host: 'localhost',
@@ -44,6 +51,10 @@ export default defineConfig({
       {
         find: '@stores',
         replacement: path.resolve(path.dirname(''), 'src/stores'),
+      },
+      {
+        find: '@types',
+        replacement: path.resolve(path.dirname(''), 'src/types.ts'),
       },
     ],
   },

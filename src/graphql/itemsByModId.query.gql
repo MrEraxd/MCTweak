@@ -1,5 +1,0 @@
-query itemsByModId($modId: String) {
-  itemsByModId(modId: $modId) {
-    displayName
-  }
-}

@@ -2,18 +2,27 @@
   import BaseDropdown from '@base/BaseDropdown.vue';
   import BaseButton from '@base/BaseButton.vue';
   import BaseInput from '@base/BaseInput.vue';
-  import { useItemPanelStore } from '../../../stores/ItemPanelStore';
+  import { useItemPanelStore } from '@stores/ItemPanelStore';
+  import { IBaseDropdownOption } from '@types';
 
   const itemPanelStore = useItemPanelStore();
 
-  const options = await itemPanelStore.getAvailableModIds();
+  const availableItemsList = await itemPanelStore.getAvailableItemLists();
+  const options: Array<IBaseDropdownOption> = [];
+
+  availableItemsList.forEach((option: string) => {
+    options.push({
+      value: option,
+      label: option,
+    });
+  });
 
   const updateSearchValueFromInput = (newValue: string) => {
     itemPanelStore.searchString = newValue;
   };
 
-  const changeLoadedItems = (modId: string) => {
-    itemPanelStore.loadItemsByModId(modId);
+  const changeLoadedItems = (modName: string) => {
+    itemPanelStore.loadItemsByModName(modName);
   };
 </script>
 

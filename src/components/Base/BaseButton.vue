@@ -1,9 +1,7 @@
 <script setup lang="ts">
-  interface Props {
-    buttonName: string;
-  }
+  import { IBaseButtonProps } from '@types';
 
-  const props = withDefaults(defineProps<Props>(), {
+  const props = withDefaults(defineProps<IBaseButtonProps>(), {
     buttonName: 'PLACEHOLDER',
   });
 </script>
