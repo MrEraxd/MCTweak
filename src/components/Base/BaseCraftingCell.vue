@@ -36,13 +36,13 @@
 <style lang="postcss">
   .base-crafting-cell {
     display: flex;
-    width: v-bind(cell.style.width);
-    height: v-bind(cell.style.height);
+    width: v-bind('cell.style?.width');
+    height: v-bind('cell.style?.height');
     position: absolute;
-    left: v-bind(cell.style.left);
-    top: v-bind(cell.style.top);
+    left: v-bind('cell.style?.left');
+    top: v-bind('cell.style?.top');
     background-color: hsl(var(--color-cc-black));
-    border-radius: v-bind(cell.style.borderRadius);
+    border-radius: v-bind('cell.style?.borderRadius');
     transition: outline-color 0.2s;
     outline: 1px solid transparent;
     justify-content: center;

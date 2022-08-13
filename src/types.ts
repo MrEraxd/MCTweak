@@ -45,7 +45,9 @@ export interface IBaseItemCell {
 }
 
 export interface Canvas {
-  backgroundColor: CSS.Properties;
+  style: {
+    backgroundColor: string;
+  };
   slots: Array<IBaseCraftingCell>;
 }
 

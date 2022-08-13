@@ -55,6 +55,6 @@
 
   .swappable-panel__panels-wrapper {
     position: relative;
-    width: 722px;
+    width: 680px;
   }
 </style>

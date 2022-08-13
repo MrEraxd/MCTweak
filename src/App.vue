@@ -23,5 +23,6 @@
     flex-shrink: 0;
     overflow: auto;
     padding-top: 12px;
+    column-gap: 32px;
   }
 </style>

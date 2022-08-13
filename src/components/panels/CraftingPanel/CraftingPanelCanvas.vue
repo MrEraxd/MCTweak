@@ -23,10 +23,8 @@
     border-radius: 4px;
     position: relative;
     background-color: v-bind(
-      craftingPanelStore.loadedCrafting.canvas?.style?.backgroundColor ??
-        'hsl(var(--color-cc-black))'
+      'craftingPanelStore.loadedCrafting?.canvas?.style?.backgroundColor ?? "hsl(var(--color-cc-black))"'
     );
-    /* overflow: hidden; */
     border: 1px solid hsl(var(--color-cc-grey-40));
   }
 </style>
