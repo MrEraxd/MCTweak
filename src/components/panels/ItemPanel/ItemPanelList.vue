@@ -15,8 +15,9 @@
             .toLocaleLowerCase()
             .search(itemPanelStore.searchString.toLocaleLowerCase()) != -1
         "
-        :key="item.id"
+        :key="item.fullName"
         :display-name="item.displayName"
+        :full-name="item.fullName"
       ></BaseItemCell>
     </div>
   </div>

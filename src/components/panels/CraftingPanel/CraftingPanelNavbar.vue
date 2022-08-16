@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import BaseDropdown from '@base/BaseDropdown.vue';
-  import BaseButton from '@base/BaseButton.vue';
   import { useCraftingPanelStore } from '@stores/craftingPanelStore';
 
   const craftingPanelStore = useCraftingPanelStore();
@@ -29,8 +28,6 @@
         dropdown-label="crafting name"
       ></BaseDropdown>
     </Suspense>
-
-    <BaseButton button-name="Add custom"></BaseButton>
   </div>
 </template>
 

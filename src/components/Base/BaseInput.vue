@@ -21,7 +21,7 @@
       :name="selectName"
       :placeholder="props.placeholder"
       :value="props.defaultValue"
-      @input="(e) => props.callback((e.target as HTMLInputElement).value.toString())"
+      @input="(e) => props.callback((e.target as HTMLInputElement).value.toString(), props.objectToChange)"
     />
 
     <label :for="selectName" class="base-input__label caption">{{
@@ -69,6 +69,14 @@
 
       &::placeholder {
         color: hsl(var(--color-cc-grey-40));
+      }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px hsl(var(--color-cc-black)) inset !important;
+        -webkit-text-fill-color: hsl(var(--color-cc-white));
       }
     }
   }

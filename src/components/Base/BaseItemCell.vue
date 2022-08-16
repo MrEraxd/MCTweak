@@ -1,9 +1,7 @@
 <script setup lang="ts">
   import { IBaseItemCell } from '@types';
 
-  const props = withDefaults(defineProps<IBaseItemCell>(), {
-    displayName: '',
-  });
+  const props = defineProps<IBaseItemCell>();
 
   const startDrag = (e: DragEvent, cell: IBaseItemCell) => {
     if (e.dataTransfer === null) return;

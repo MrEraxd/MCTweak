@@ -31,17 +31,31 @@ export interface IBaseDropdownProps {
  */
 export interface IBaseInputProps {
   inputLabel: string;
-  callback: (inputValue: string) => void;
+  callback: (
+    inputValue: string,
+    objectToChange: AddinationalInput | undefined
+  ) => void;
   placeholder?: string;
   defaultValue?: string;
+  objectToChange?: AddinationalInput;
 }
 
 export interface IBaseButtonProps {
   buttonName: string;
+  callback?: () => void;
 }
 
 export interface IBaseItemCell {
   displayName: string;
+  fullName: string;
+}
+
+export interface IBaseRadio {
+  displayName: string;
+  name: string;
+  index: number;
+  callback: (functionSyntax: string) => void;
+  value: string;
 }
 
 export interface Canvas {
@@ -49,33 +63,38 @@ export interface Canvas {
     backgroundColor: string;
   };
   slots: Array<IBaseCraftingCell>;
+  bottomTitle: string;
+  bottomSlots: Array<IBaseCraftingCell>;
 }
 
 export interface Crafting {
   name?: string;
   displayName?: string;
-  prefix?: string;
   canvas?: Canvas;
   recipeTypes?: Array<{
     name: string;
     displayName: string;
-    functionPrefix: string;
     functionSyntax: string;
   }>;
-  addinationalInputs?: Array<{
-    todo: string;
-  }>;
+  addinationalInputs?: Array<AddinationalInput>;
+  activeSlotPreview?: IBaseCraftingCell;
+  activeRecipeTypeSyntax?: string;
+  recipeName?: string;
+}
+
+export interface AddinationalInput {
+  type: string;
+  displayName: string;
+  syntaxName: string;
+  value?: string;
+  defaultValue?: string;
 }
 
 export interface IBaseCraftingCell {
   type: 'craftingCell';
   displayName: string;
   syntaxName: string;
-  addinationalInputs?: Array<{
-    displayName: string;
-    syntaxName: string;
-    defaultValue: string;
-  }>;
+  addinationalInputs?: Array<AddinationalInput>;
   style?: CSS.Properties;
   item: Item;
 }
@@ -85,5 +104,12 @@ export interface Item {
   displayName: string;
   type: 'item';
   modName: string;
-  fullString: string;
+  fullName: string;
+}
+
+export interface SavedRecipe {
+  recipeName: string;
+  recipeString: string;
+  export: boolean;
+  craftingName: string;
 }

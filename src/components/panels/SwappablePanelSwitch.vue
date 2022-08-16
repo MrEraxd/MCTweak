@@ -4,9 +4,7 @@
     (e: 'toggleActivePanel', newPanelName: string): void;
   }>();
 
-  const props = withDefaults(defineProps<{ activePanel: string }>(), {
-    activePanel: 'CraftingPanel',
-  });
+  const props = defineProps<{ activePanel: string }>();
 
   function togglePanel(newPanelName: string) {
     emit('toggleActivePanel', newPanelName);
@@ -18,8 +16,7 @@
     <button
       class="the-active-panel-switch__button subtitle subtitle--1"
       :class="{
-        'the-active-panel-switch__button--active':
-          props.activePanel === 'CraftingPanel',
+        active: props.activePanel === 'CraftingPanel',
       }"
       @click="togglePanel('CraftingPanel')"
     >
@@ -29,8 +26,7 @@
     <button
       class="the-active-panel-switch__button subtitle subtitle--1"
       :class="{
-        'the-active-panel-switch__button--active':
-          props.activePanel === 'SavedRecipesPanel',
+        active: props.activePanel === 'SavedRecipesPanel',
       }"
       @click="togglePanel('SavedRecipesPanel')"
     >
@@ -64,7 +60,7 @@
         cursor: pointer;
       }
 
-      &--active {
+      &.active {
         border-color: hsl(var(--color-cc-blue-50));
       }
 

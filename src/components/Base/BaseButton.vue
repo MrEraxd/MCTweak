@@ -3,11 +3,16 @@
 
   const props = withDefaults(defineProps<IBaseButtonProps>(), {
     buttonName: 'PLACEHOLDER',
+    callback: () => {
+      console.warn('No callback provided');
+    },
   });
 </script>
 
 <template>
-  <button class="base-button">{{ props.buttonName }}</button>
+  <button class="base-button" @click="props.callback()">
+    {{ props.buttonName }}
+  </button>
 </template>
 
 <style lang="postcss">

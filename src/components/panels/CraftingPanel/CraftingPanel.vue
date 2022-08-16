@@ -2,6 +2,8 @@
   import CraftingPanelNavbar from './CraftingPanelNavbar.vue';
   import CraftingPanelCanvas from './CraftingPanelCanvas.vue';
   import CraftingPanelOptions from './CraftingPanelOptions.vue';
+  import CraftingPanelBottomSlots from './CraftingPanelBottomSlots.vue';
+  import CraftingPanelSaveRecipe from './CraftingPanelSaveRecipe.vue';
 </script>
 
 <template>
@@ -14,6 +16,9 @@
       <CraftingPanelCanvas></CraftingPanelCanvas>
       <CraftingPanelOptions></CraftingPanelOptions>
     </div>
+
+    <CraftingPanelBottomSlots></CraftingPanelBottomSlots>
+    <CraftingPanelSaveRecipe></CraftingPanelSaveRecipe>
   </div>
 </template>
 

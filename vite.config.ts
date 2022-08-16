@@ -8,6 +8,7 @@ import graphql from '@rollup/plugin-graphql';
 import VueTypeImports from 'vite-plugin-vue-type-imports';
 
 // https://vitejs.dev/config/
+
 export default defineConfig({
   plugins: [
     vue(),
@@ -22,8 +23,6 @@ export default defineConfig({
     https: {
       key: fs.readFileSync('./.cert/localhost-key.pem'),
       cert: fs.readFileSync('./.cert/localhost.pem'),
-      //key: fs.readFileSync('/etc/letsencrypt/live/cobaltcastle.cc/privkey.pem'),
-      //cert: fs.readFileSync('/etc/letsencrypt/live/cobaltcastle.cc/fullchain.pem')
     },
   },
   resolve: {

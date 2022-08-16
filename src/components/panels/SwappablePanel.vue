@@ -4,7 +4,7 @@
   import SavedRecipesPanel from './SavedRecipesPanel/SavedRecipesPanel.vue';
   import { ref } from 'vue';
 
-  let activePanel = ref('CraftingPanel');
+  const activePanel = ref('CraftingPanel');
 
   function toggleActivePanel(newPanelName: string) {
     activePanel.value = newPanelName;

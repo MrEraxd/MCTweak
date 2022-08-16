@@ -2,17 +2,13 @@ import { defineStore } from 'pinia';
 import { queryData } from '@plugins/dbConnection';
 import itemsByModNameQuery from '@graphql/itemsByModName.query.gql';
 import availableItemsListQuery from '@graphql/availableItemsList.query.gql';
-
-interface IItem {
-  id: string;
-  displayName: string;
-}
+import { Item } from '@types';
 
 export const useItemPanelStore = defineStore('ItemPanelStore', {
   state: () => {
     return {
       searchString: '',
-      loadedItems: <IItem[]>[],
+      loadedItems: <Item[]>[],
       availableItemLists: [],
     };
   },

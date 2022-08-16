@@ -2,7 +2,6 @@ query CraftingByName($name: String) {
   craftingByName(name: $name) {
     name
     displayName
-    prefix
     canvas {
       slots {
         type
@@ -10,17 +9,49 @@ query CraftingByName($name: String) {
         syntaxName
         addinationalInputs {
           type
+          defaultValue
         }
         style {
           width
           height
           top
           left
+          borderRadius
+          position
+          outlineColor
         }
       }
       style {
         backgroundColor
       }
+      bottomSlots {
+        type
+        displayName
+        syntaxName
+        addinationalInputs {
+          type
+          displayName
+          syntaxName
+          defaultValue
+        }
+        style {
+          borderRadius
+          position
+          outlineColor
+        }
+      }
+      bottomTitle
+    }
+    recipeTypes {
+      name
+      displayName
+      functionSyntax
+    }
+    addinationalInputs {
+      type
+      displayName
+      syntaxName
+      defaultValue
     }
   }
 }
