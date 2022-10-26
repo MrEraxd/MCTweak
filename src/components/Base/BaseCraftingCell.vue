@@ -25,6 +25,10 @@
   const changeActiveSlotPreview = () => {
     craftingPanelStore.loadedCrafting.activeSlotPreview = cell.value;
   };
+
+  const clearSlot = () => {
+    cell.value.item = undefined;
+  };
 </script>
 
 <template>
@@ -37,6 +41,7 @@
     @dragenter.prevent
     @dragover.prevent
     @contextmenu.prevent
+    @click.middle="clearSlot"
     @click="changeActiveSlotPreview"
   >
     <div class="base-item-cell__content">

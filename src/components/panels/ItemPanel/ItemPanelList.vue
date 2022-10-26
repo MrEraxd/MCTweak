@@ -18,7 +18,7 @@
         :key="item.fullName"
         :display-name="item.displayName"
         :full-name="item.fullName"
-      ></BaseItemCell>
+      />
     </div>
   </div>
 </template>

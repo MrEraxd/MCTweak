@@ -9,16 +9,16 @@
 <template>
   <div class="crafting-panel">
     <Suspense>
-      <CraftingPanelNavbar></CraftingPanelNavbar>
+      <CraftingPanelNavbar />
     </Suspense>
 
     <div class="crafting-panel__middle-bar">
-      <CraftingPanelCanvas></CraftingPanelCanvas>
-      <CraftingPanelOptions></CraftingPanelOptions>
+      <CraftingPanelCanvas />
+      <CraftingPanelOptions />
     </div>
 
-    <CraftingPanelBottomSlots></CraftingPanelBottomSlots>
-    <CraftingPanelSaveRecipe></CraftingPanelSaveRecipe>
+    <CraftingPanelBottomSlots />
+    <CraftingPanelSaveRecipe />
   </div>
 </template>
 

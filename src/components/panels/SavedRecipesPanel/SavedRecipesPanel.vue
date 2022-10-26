@@ -5,8 +5,8 @@
 
 <template>
   <div class="saved-recipes-panel">
-    <SavedRecipesPanelNavbar></SavedRecipesPanelNavbar>
-    <SaveRecipesPanelList></SaveRecipesPanelList>
+    <SavedRecipesPanelNavbar />
+    <SaveRecipesPanelList />
   </div>
 </template>
 

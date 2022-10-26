@@ -53,7 +53,7 @@ export default defineConfig({
       },
       {
         find: '@types',
-        replacement: path.resolve(path.dirname(''), 'src/types.ts'),
+        replacement: path.resolve(path.dirname(''), 'src/types'),
       },
     ],
   },

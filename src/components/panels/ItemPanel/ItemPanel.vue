@@ -6,10 +6,10 @@
 <template>
   <div class="item-panel">
     <Suspense>
-      <ItemPanelNavbar></ItemPanelNavbar>
+      <ItemPanelNavbar />
     </Suspense>
 
-    <ItemPanelList></ItemPanelList>
+    <ItemPanelList />
   </div>
 </template>
 

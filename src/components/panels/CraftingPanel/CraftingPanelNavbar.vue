@@ -1,22 +1,29 @@
 <script setup lang="ts">
   import BaseDropdown from '@base/BaseDropdown.vue';
   import { useCraftingPanelStore } from '@stores/craftingPanelStore';
+  import { IBaseDropdownOption } from '@types';
 
   const craftingPanelStore = useCraftingPanelStore();
 
-  const options = await craftingPanelStore.getAvailableCraftings();
+  const availableCraftings = await craftingPanelStore.getAvailableCraftings();
+  const options: Array<IBaseDropdownOption> = [];
 
-  options.forEach((option: any) => {
-    delete Object.assign(option, { value: option['name'] })['name'];
+  availableCraftings.forEach((option: any) => {
+    options.push({
+      value: option.name,
+      label: option.displayName,
+    });
+  });
 
-    delete Object.assign(option, {
-      label: option['displayName'],
-    })['displayName'];
+  options.sort((a: IBaseDropdownOption) => {
+    return a.value === 'vanilla_crafting' ? -1 : 0;
   });
 
   const changeLoadedCrafting = (name: string) => {
     craftingPanelStore.loadCraftingByName(name);
   };
+
+  changeLoadedCrafting(options[0].value);
 </script>
 
 <template>
@@ -26,7 +33,7 @@
         :options="options"
         :callback="changeLoadedCrafting"
         dropdown-label="crafting name"
-      ></BaseDropdown>
+      />
     </Suspense>
   </div>
 </template>

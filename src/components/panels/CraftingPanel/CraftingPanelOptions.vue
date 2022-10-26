@@ -16,19 +16,15 @@
     <CraftingPanelOptionsPanelSwitch
       :active-panel="activePanel"
       @toggle-active-panel="toggleActivePanel"
-    ></CraftingPanelOptionsPanelSwitch>
+    />
 
     <div class="crafting-panel-options__swappable-panel">
       <Transition>
-        <CraftingPanelSlotOptions
-          v-show="activePanel === 'SlotOptions'"
-        ></CraftingPanelSlotOptions>
+        <CraftingPanelSlotOptions v-show="activePanel === 'SlotOptions'" />
       </Transition>
 
       <Transition>
-        <CraftingPanelRecipeOptions
-          v-show="activePanel === 'RecipeOptions'"
-        ></CraftingPanelRecipeOptions>
+        <CraftingPanelRecipeOptions v-show="activePanel === 'RecipeOptions'" />
       </Transition>
     </div>
   </div>

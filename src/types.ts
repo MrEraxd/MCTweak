@@ -42,6 +42,7 @@ export interface IBaseInputProps {
 
 export interface IBaseButtonProps {
   buttonName: string;
+  isErrorButton?: boolean;
   callback?: () => void;
 }
 
@@ -96,7 +97,7 @@ export interface IBaseCraftingCell {
   syntaxName: string;
   addinationalInputs?: Array<AddinationalInput>;
   style?: CSS.Properties;
-  item: Item;
+  item?: Item;
 }
 
 export interface Item {

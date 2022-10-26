@@ -1,11 +1,33 @@
 import { SavedRecipe } from '@types';
-import { defineStore } from 'pinia';
+import { defineStore, acceptHMRUpdate } from 'pinia';
+import { useStorage } from '@vueuse/core';
 
 export const useSavedRecipesPanelStore = defineStore('RecipePanelStore', {
   state: () => {
     return {
-      savedRecipes: <SavedRecipe[]>[],
+      searchString: '',
+      savedRecipes: useStorage('savedRecipes', <SavedRecipe[]>[]),
     };
   },
-  actions: {},
+  actions: {
+    addRecipe(recipeName: string, recipeString: string, craftingName: string) {
+      this.savedRecipes.push({
+        recipeName: recipeName,
+        recipeString: recipeString,
+        craftingName: craftingName,
+        export: true,
+      });
+    },
+    removeRecipeByName(recipeNameToRemove: string) {
+      this.savedRecipes = this.savedRecipes.filter((recipe) => {
+        return recipe.recipeName !== recipeNameToRemove;
+      });
+    },
+  },
 });
+
+if (import.meta.hot) {
+  import.meta.hot.accept(
+    acceptHMRUpdate(useSavedRecipesPanelStore, import.meta.hot)
+  );
+}

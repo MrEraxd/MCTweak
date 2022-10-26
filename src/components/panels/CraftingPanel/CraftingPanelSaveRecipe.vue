@@ -17,14 +17,8 @@
 
 <template>
   <div class="crafting-panel-save-recipe">
-    <BaseInput
-      input-label="Recipe name"
-      :callback="changeRecipeName"
-    ></BaseInput>
-    <BaseButton
-      button-name="Save recipe"
-      :callback="buttonCallback"
-    ></BaseButton>
+    <BaseInput input-label="Recipe name" :callback="changeRecipeName" />
+    <BaseButton button-name="Save recipe" :callback="buttonCallback" />
   </div>
 </template>
 

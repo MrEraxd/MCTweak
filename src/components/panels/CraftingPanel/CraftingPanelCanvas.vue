@@ -12,7 +12,7 @@
       v-for="item in craftingPanelStore.loadedCrafting.canvas?.slots"
       :key="item.syntaxName"
       :cell-info="item"
-    ></BaseCraftingCell>
+    />
   </div>
 </template>
 

@@ -30,7 +30,7 @@
         :index="index"
         :value="recipeType.functionSyntax"
         :callback="changeRecipeType"
-      ></BaseRadio>
+      />
     </div>
 
     <div class="crafting-panel-recipe-options__addinational-inputs-wrapper">
@@ -47,7 +47,7 @@
           :default-value="
             addinationalInput.defaultValue ?? addinationalInput.value
           "
-        ></BaseInput>
+        />
       </div>
     </div>
   </div>

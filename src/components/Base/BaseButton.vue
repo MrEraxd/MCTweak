@@ -3,6 +3,7 @@
 
   const props = withDefaults(defineProps<IBaseButtonProps>(), {
     buttonName: 'PLACEHOLDER',
+    isErrorButton: false,
     callback: () => {
       console.warn('No callback provided');
     },
@@ -10,7 +11,13 @@
 </script>
 
 <template>
-  <button class="base-button" @click="props.callback()">
+  <button
+    class="base-button"
+    :class="{
+      'base-button--error': props.isErrorButton,
+    }"
+    @click="props.callback()"
+  >
     {{ props.buttonName }}
   </button>
 </template>
@@ -39,6 +46,20 @@
     &:active {
       background-color: hsl(var(--color-cc-blue-60));
       transition: background-color 0.15s;
+    }
+
+    &--error {
+      background-color: hsl(var(--color-cc-red-50));
+
+      &:hover {
+        cursor: pointer;
+        background-color: hsl(var(--color-cc-red-40));
+      }
+
+      &:active {
+        background-color: hsl(var(--color-cc-red-60));
+        transition: background-color 0.15s;
+      }
     }
   }
 </style>

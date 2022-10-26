@@ -53,12 +53,7 @@ export const createScript = (loadedCrafting: Crafting) => {
     recipeString: string,
     craftingName: string
   ) {
-    savedRecipesPanelStore.savedRecipes.push({
-      recipeName: recipeName,
-      recipeString: recipeString,
-      craftingName: craftingName,
-      export: true,
-    });
+    savedRecipesPanelStore.addRecipe(recipeName, recipeString, craftingName);
   }
 
   function searchObjectWithSyntaxName(

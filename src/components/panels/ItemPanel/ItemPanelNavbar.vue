@@ -16,6 +16,10 @@
     });
   });
 
+  options.sort((a: any) => {
+    return a.value === 'minecraft' ? -1 : 0;
+  });
+
   const updateSearchValueFromInput = (newValue: string) => {
     itemPanelStore.searchString = newValue;
   };
@@ -23,6 +27,8 @@
   const changeLoadedItems = (modName: string) => {
     itemPanelStore.loadItemsByModName(modName);
   };
+
+  changeLoadedItems(options[0].value);
 </script>
 
 <template>
@@ -32,14 +38,14 @@
         dropdown-label="MOD"
         :options="options"
         :callback="changeLoadedItems"
-      ></BaseDropdown>
+      />
     </Suspense>
 
     <BaseInput
       input-label="Filter"
       :callback="updateSearchValueFromInput"
       :default-value="itemPanelStore.searchString"
-    ></BaseInput>
+    />
   </div>
 </template>
 

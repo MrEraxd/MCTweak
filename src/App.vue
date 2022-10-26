@@ -8,11 +8,11 @@
 </script>
 
 <template>
-  <TheHeader></TheHeader>
+  <TheHeader />
 
   <main class="panels-wrapper">
-    <SwappablePanel></SwappablePanel>
-    <ItemPanel></ItemPanel>
+    <SwappablePanel />
+    <ItemPanel />
   </main>
 </template>
 

@@ -40,7 +40,7 @@
             :default-value="
               addinationalInput.value ?? addinationalInput.defaultValue
             "
-          ></BaseInput>
+          />
         </div>
       </div>
       <div v-else>There are no addinational input for this slot</div>
