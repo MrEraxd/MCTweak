@@ -6,7 +6,7 @@
 
   const craftingPanelStore = useCraftingPanelStore();
 
-  const buttonCallback = () => {
+  const buttonClickHandler = () => {
     createScript(craftingPanelStore.loadedCrafting);
   };
 
@@ -18,7 +18,7 @@
 <template>
   <div class="crafting-panel-save-recipe">
     <BaseInput input-label="Recipe name" :callback="changeRecipeName" />
-    <BaseButton button-name="Save recipe" :callback="buttonCallback" />
+    <BaseButton button-name="Save recipe" @click="buttonClickHandler" />
   </div>
 </template>
 

@@ -23,6 +23,16 @@ export const useSavedRecipesPanelStore = defineStore('RecipePanelStore', {
         return recipe.recipeName !== recipeNameToRemove;
       });
     },
+    toggleRecipeExportStatus(recipeNameToToggle: string) {
+      this.savedRecipes = this.savedRecipes.map((recipe) =>
+        recipe.recipeName === recipeNameToToggle
+          ? { ...recipe, export: !recipe.export }
+          : recipe
+      );
+    },
+    removeSavedRecipes() {
+      this.savedRecipes = [];
+    },
   },
 });
 

@@ -43,7 +43,6 @@ export interface IBaseInputProps {
 export interface IBaseButtonProps {
   buttonName: string;
   isErrorButton?: boolean;
-  callback?: () => void;
 }
 
 export interface IBaseItemCell {
@@ -57,6 +56,14 @@ export interface IBaseRadio {
   index: number;
   callback: (functionSyntax: string) => void;
   value: string;
+}
+
+export interface IBaseCheckboxProps {
+  initiallyChecked?: boolean;
+}
+
+export interface IBaseCheckboxEmits {
+  (e: 'toggle'): void;
 }
 
 export interface Canvas {

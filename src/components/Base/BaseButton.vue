@@ -4,9 +4,6 @@
   const props = withDefaults(defineProps<IBaseButtonProps>(), {
     buttonName: 'PLACEHOLDER',
     isErrorButton: false,
-    callback: () => {
-      console.warn('No callback provided');
-    },
   });
 </script>
 
@@ -16,7 +13,6 @@
     :class="{
       'base-button--error': props.isErrorButton,
     }"
-    @click="props.callback()"
   >
     {{ props.buttonName }}
   </button>

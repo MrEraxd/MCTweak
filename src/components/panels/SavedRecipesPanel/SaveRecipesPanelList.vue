@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import BaseCheckbox from '@base/BaseCheckbox.vue';
   import { useSavedRecipesPanelStore } from '@stores/savedRecipesPanelStore';
   import IconExit from '@svg/icon-exit.svg?component';
 
@@ -6,6 +7,10 @@
 
   const handleRemoveSavedRecipeButton = (recipeNameToRemove: string) => {
     savedRecipesPanelStore.removeRecipeByName(recipeNameToRemove);
+  };
+
+  const handleExportCheckboxToggle = (recipeNameToToggle: string) => {
+    savedRecipesPanelStore.toggleRecipeExportStatus(recipeNameToToggle);
   };
 </script>
 
@@ -55,7 +60,10 @@
         <td
           class="saved-recipes-panel-list__cell saved-recipes-panel-list__cell--center"
         >
-          X
+          <BaseCheckbox
+            :initially-checked="savedRecipe.export"
+            @toggle="handleExportCheckboxToggle(savedRecipe.recipeName)"
+          />
         </td>
         <td
           class="saved-recipes-panel-list__cell saved-recipes-panel-list__cell--center"
@@ -121,7 +129,7 @@
       gap: 1px;
       background-color: hsl(var(--color-cc-grey-30));
 
-      *:first-child:not(button) {
+      > *:first-child:not(button) {
         border-left: none;
         width: 100%;
         max-width: 340px;

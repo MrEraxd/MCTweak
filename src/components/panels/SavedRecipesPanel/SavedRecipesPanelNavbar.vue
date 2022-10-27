@@ -8,6 +8,10 @@
   const updateSearchValueFromInput = (newValue: string) => {
     savedRecipesPanelStore.searchString = newValue;
   };
+
+  const removeSavedRecipesButtonHandler = () => {
+    savedRecipesPanelStore.removeSavedRecipes();
+  };
 </script>
 
 <template>
@@ -15,7 +19,11 @@
     <BaseInput input-label="Search" :callback="updateSearchValueFromInput" />
     <BaseButton button-name="IMPORT" />
     <BaseButton button-name="EXPORT" />
-    <BaseButton button-name="RESET" :is-error-button="true" />
+    <BaseButton
+      button-name="RESET"
+      :is-error-button="true"
+      @click="removeSavedRecipesButtonHandler"
+    />
   </div>
 </template>
 
