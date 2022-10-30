@@ -5,6 +5,7 @@
   import TheHeader from './components/TheHeader.vue';
   import SwappablePanel from './components/panels/SwappablePanel.vue';
   import ItemPanel from './components/panels/ItemPanel/ItemPanel.vue';
+  import TheOverlay from './components/TheOverlay.vue';
 </script>
 
 <template>
@@ -14,6 +15,8 @@
     <SwappablePanel />
     <ItemPanel />
   </main>
+
+  <TheOverlay />
 </template>
 
 <style lang="postcss">

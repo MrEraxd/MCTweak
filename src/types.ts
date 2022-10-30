@@ -45,6 +45,11 @@ export interface IBaseButtonProps {
   isErrorButton?: boolean;
 }
 
+export enum ModalTypes {
+  EXPORT_RECIPE_MODAL = 'ExportRecipesModal',
+  RESET_SAVED_RECIPES_MODAL = 'ResetSavedRecipesModal',
+}
+
 export interface IBaseItemCell {
   displayName: string;
   fullName: string;
