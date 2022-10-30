@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import { useCraftingPanelStore } from '@stores/craftingPanelStore';
   import { AddinationalInput } from '@types';
-  import BaseInput from '@base/BaseInput.vue';
 
   const craftingPanelStore = useCraftingPanelStore();
 

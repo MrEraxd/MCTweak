@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import BaseDropdown from '@base/BaseDropdown.vue';
   import { useCraftingPanelStore } from '@stores/craftingPanelStore';
   import { IBaseDropdownOption } from '@types';
 

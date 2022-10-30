@@ -42,11 +42,13 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.4.0",
+    "uuid": "^9.0.0",
     "vue": "^3.2.27"
   },
   "devDependencies": {
     "@rollup/plugin-graphql": "^1.1.0",
     "@types/svgo": "^2.6.1",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
     "@vitejs/plugin-vue": "^3.1.0",

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import BaseDropdown from '@base/BaseDropdown.vue';
-  import BaseInput from '@base/BaseInput.vue';
   import { useItemPanelStore } from '@stores/ItemPanelStore';
   import { IBaseDropdownOption } from '@types';
 

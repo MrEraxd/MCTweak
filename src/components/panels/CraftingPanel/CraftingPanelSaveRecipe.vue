@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import BaseInput from '@base/BaseInput.vue';
-  import BaseButton from '@base/BaseButton.vue';
   import { createScript } from '@plugins/zenScriptFunctions';
   import { useCraftingPanelStore } from '@stores/craftingPanelStore';
 

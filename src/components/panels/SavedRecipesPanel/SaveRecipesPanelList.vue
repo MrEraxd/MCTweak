@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import BaseCheckbox from '@base/BaseCheckbox.vue';
   import { useSavedRecipesPanelStore } from '@stores/savedRecipesPanelStore';
   import IconExit from '@svg/icon-exit.svg?component';
 

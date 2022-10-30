@@ -46,8 +46,14 @@ export interface IBaseButtonProps {
 }
 
 export enum ModalTypes {
-  EXPORT_RECIPE_MODAL = 'ExportRecipesModal',
+  EXPORT_SAVED_RECIPES_MODAL = 'ExportSavedRecipesModal',
   RESET_SAVED_RECIPES_MODAL = 'ResetSavedRecipesModal',
+}
+
+export enum NotificationTypes {
+  SUCCESS = 'success',
+  ERROR = 'error',
+  WARN = 'warn',
 }
 
 export interface IBaseItemCell {
@@ -65,6 +71,15 @@ export interface IBaseRadio {
 
 export interface IBaseCheckboxProps {
   initiallyChecked?: boolean;
+  checkboxLabel?: string;
+}
+
+export interface IBaseNotification {
+  title: string;
+  desc: string;
+  type: string;
+  uuid: string;
+  ttl?: number;
 }
 
 export interface IBaseCheckboxEmits {

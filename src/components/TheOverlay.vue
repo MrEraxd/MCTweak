@@ -2,6 +2,7 @@
   import { useModalStore } from '@stores/modalStore';
   import { useOverlayStore } from '@stores/overlayStore';
   import TheModal from './TheModal.vue';
+  import TheNotifications from './TheNotifications.vue';
 
   const overlayStore = useOverlayStore();
   const modalStore = useModalStore();
@@ -22,6 +23,7 @@
   >
     <div class="overlay__container" @click.self="handleOverlayBackgroundClick">
       <TheModal />
+      <TheNotifications />
     </div>
   </div>
 </template>
@@ -47,6 +49,7 @@
       position: relative;
       width: 100%;
       height: 100%;
+      overflow: hidden;
     }
   }
 </style>

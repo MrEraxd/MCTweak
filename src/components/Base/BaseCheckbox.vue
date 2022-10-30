@@ -4,6 +4,7 @@
 
   const props = withDefaults(defineProps<IBaseCheckboxProps>(), {
     initiallyChecked: false,
+    checkboxLabel: '',
   });
 
   defineEmits<{
@@ -24,12 +25,22 @@
         <IconCheckmark class="base-checkbox__checkmark" />
       </span>
     </div>
-    <div class="base-checkbox__label"></div>
+    <div v-if="props.checkboxLabel" class="base-checkbox__label">
+      {{ props.checkboxLabel }}
+    </div>
   </label>
 </template>
 
 <style lang="postcss">
   .base-checkbox {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
     &__checkbox {
       display: none;
     }
@@ -41,7 +52,7 @@
 
     &__checkbox:checked ~ .base-checkbox__custom-checkbox {
       .base-checkbox__checkmark {
-        display: flex;
+        opacity: 1;
       }
     }
 
@@ -54,14 +65,15 @@
       border: 1px solid hsl(var(--color-cc-grey-30));
       align-items: center;
       justify-content: center;
-
-      &:hover {
-        cursor: pointer;
-      }
     }
 
     &__checkmark {
-      display: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    &__label {
+      font-size: 14px;
     }
   }
 </style>

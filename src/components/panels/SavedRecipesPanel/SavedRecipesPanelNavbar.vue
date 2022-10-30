@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import BaseInput from '@base/BaseInput.vue';
-  import BaseButton from '@base/BaseButton.vue';
   import { useSavedRecipesPanelStore } from '@stores/SavedRecipesPanelStore';
   import { useModalStore } from '@stores/modalStore';
   import { useOverlayStore } from '@stores/overlayStore';
@@ -15,7 +13,7 @@
   };
 
   const exportRecipesButtonHandler = () => {
-    modalStore.changeOpenedModal(ModalTypes.EXPORT_RECIPE_MODAL);
+    modalStore.changeOpenedModal(ModalTypes.EXPORT_SAVED_RECIPES_MODAL);
     overlayStore.showOverlay();
     modalStore.showModal();
     modalStore.changeModalTitle('EXPORT');

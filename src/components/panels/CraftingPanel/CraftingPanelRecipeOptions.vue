@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import { useCraftingPanelStore } from '@stores/craftingPanelStore';
-  import BaseRadio from '@base/BaseRadio.vue';
-  import BaseInput from '@base/BaseInput.vue';
+
   import { AddinationalInput } from '@types';
 
   const craftingPanelStore = useCraftingPanelStore();
