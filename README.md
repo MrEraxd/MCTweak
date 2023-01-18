@@ -14,3 +14,7 @@ Chrome browser: > 100
 # Creating production build
 
 To create production build perform `npm build` command, then extract `dist` folder on production server.
+
+# Submitting pull request
+
+Do you see a bug that can be fixed? Maybe something is broken or you want to add new feature? Submit pull request it will be reviewed and eventually merged into master.
