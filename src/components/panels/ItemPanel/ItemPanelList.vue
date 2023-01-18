@@ -9,13 +9,13 @@
   <div class="item-panel-list">
     <div class="item-panel-list__list">
       <BaseItemCell
-        v-for="item in itemPanelStore.loadedItems"
+        v-for="(item, index) in itemPanelStore.loadedItems"
         v-show="
           item.displayName
             .toLocaleLowerCase()
             .search(itemPanelStore.searchString.toLocaleLowerCase()) != -1
         "
-        :key="item.fullName"
+        :key="item.fullName + index"
         :display-name="item.displayName"
         :full-name="item.fullName"
       />

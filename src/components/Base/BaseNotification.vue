@@ -32,7 +32,6 @@
   };
 
   function fadeNotification() {
-    console.log(notification.value);
     notification.value.animate([{ opacity: 1 }, { opacity: 0 }], {
       fill: 'forwards',
       easing: 'ease-in-out',
@@ -91,14 +90,17 @@
 
     &--success {
       --theme-color: var(--color-cc-green-30);
+      --theme-color-darker: var(--color-cc-green-70);
     }
 
     &--error {
       --theme-color: var(--color-cc-red-30);
+      --theme-color-darker: var(--color-cc-red-70);
     }
 
     &--warn {
       --theme-color: var(--color-cc-yellow-30);
+      --theme-color-darker: var(--color-cc-yellow-70);
     }
 
     &__top-bar {
@@ -134,16 +136,24 @@
       left: 0;
       width: 100%;
       height: 4px;
-      background-color: hsl(var(--theme-color));
-      border-bottom-left-radius: 4px;
-      animation: unloading v-bind('props.ttl + "ms"') linear forwards;
+      background-color: hsl(var(--theme-color-darker));
 
-      @keyframes unloading {
-        0% {
-          width: 100%;
-        }
-        100% {
-          width: 0%;
+      &::after {
+        content: '';
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: hsl(var(--theme-color));
+        border-bottom-left-radius: 4px;
+        animation: unloading v-bind('props.ttl + "ms"') linear forwards;
+
+        @keyframes unloading {
+          0% {
+            width: 100%;
+          }
+          100% {
+            width: 0%;
+          }
         }
       }
     }

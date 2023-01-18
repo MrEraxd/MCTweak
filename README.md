@@ -1,11 +1,16 @@
-# Vue 3 + Typescript + Vite
+# Requirements
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Node.js: > 16.0.1  
+Setup [API](https://github.com/MrEraxd/McTweak-API)  
+Chrome browser: > 100
 
-## Recommended IDE Setup
+# Setting up dev enviroment
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+1. Perform `npm install`
+2. Create SSL certificate for localhost place it in .cert folder, you can use: https://www.npmjs.com/package/mkcert. You can also disable `https` in `vite.config.ts`
+3. Copy `.env.production` file and name it `.env.local`, change `VITE_MCTWEAK_DB_ADDRESS` with your local API address. You got this address creating API.
+4. You start dev with `npm start`
 
-## Type Support For `.vue` Imports in TS
+# Creating production build
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+To create production build perform `npm build` command, then extract `dist` folder on production server.

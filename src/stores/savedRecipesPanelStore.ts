@@ -33,6 +33,11 @@ export const useSavedRecipesPanelStore = defineStore('RecipePanelStore', {
     removeSavedRecipes() {
       this.savedRecipes = [];
     },
+    checkIfRecipeNameExists(recipeName: string) {
+      return this.savedRecipes.some(
+        (recipe) => recipe.recipeName === recipeName
+      );
+    },
   },
 });
 
